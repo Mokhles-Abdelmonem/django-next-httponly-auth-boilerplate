@@ -11,13 +11,18 @@ const Layout = ({ children }) => {
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     const router = useRouter();
     const dispatch = useDispatch();
-    useEffect(() => {
-        if (dispatch && dispatch !== null && dispatch !== undefined)
-            dispatch(request_refresh());
-        console.log({isAuthenticated:isAuthenticated})
-        console.log({dispatch:dispatch})
-    }, [dispatch]);
 
+
+
+    useEffect(() => {
+
+        if (dispatch && dispatch !== null && dispatch !== undefined){
+            dispatch(request_refresh());
+        }
+        
+    }, [dispatch]);
+    
+    console.log({isAuthenticated:isAuthenticated})
     
     const execludeList = ['/register', '/login']
     

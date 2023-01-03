@@ -2,10 +2,7 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import ProTip from '../ProTip';
-import Link from '../Link';
-import Copyright from '../Copyright';
-import Header from '../components/Header';
+import Copyright from '../components/general/Copyright';
 import { useSelector } from 'react-redux';
 
 

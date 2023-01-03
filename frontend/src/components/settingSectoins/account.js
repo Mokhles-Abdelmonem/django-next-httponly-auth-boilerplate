@@ -4,12 +4,10 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateProfille } from '../../actions/auth/updateProfile';
 import { Formik, Form, Field } from 'formik';
 import { profileSchema } from "../../schemas";
-import { LinearProgress } from '@mui/material';
 import { TextField } from 'formik-mui';
 import Alert from '@mui/material/Alert';
 
@@ -25,6 +23,7 @@ const AcountSettings = () => {
       last_name: '',
       email: '',
       success: '',
+      error: '',
     };
 
     const [alertData, setAlertData] = useState(initialState);
@@ -34,6 +33,7 @@ const AcountSettings = () => {
         last_name,
         email,
         success,
+        error,
     } = alertData;
 
 
@@ -151,6 +151,13 @@ const AcountSettings = () => {
               success && 
               <Alert severity="success" color="info">
                 {success}
+              </Alert>
+            }
+            
+            {
+              error && 
+              <Alert severity="error">
+                {error}
               </Alert>
             }
 

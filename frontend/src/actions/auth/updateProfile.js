@@ -1,8 +1,3 @@
-import {
-    REGISTER_FAIL,
-    REMOVE_AUTH_LOADING,
-} from './types';
-
 
 
 export const updateProfille = (
@@ -25,12 +20,8 @@ export const updateProfille = (
         const res = await apiRes.json();
         return res
     } catch(err) {
-        dispatch({
-            type: REGISTER_FAIL
-        });
+        return {error: 'somthing went wrong try again'};
     }
 
-    dispatch({
-        type: REMOVE_AUTH_LOADING
-    });
+
 };

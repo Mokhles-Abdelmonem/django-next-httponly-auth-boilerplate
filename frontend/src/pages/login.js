@@ -46,8 +46,6 @@ const theme = createTheme();
 export default function SignIn() {
 
   
-
-
   const dispatch = useDispatch();
   const router = useRouter();
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);

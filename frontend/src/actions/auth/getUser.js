@@ -2,8 +2,7 @@ import {
     LOAD_USER_SUCCESS,
     LOAD_USER_FAIL,
 } from './types';
-import { API_URL } from '../../config/index';
-import cookie from 'cookie';
+
 
 
 

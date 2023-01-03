@@ -10,7 +10,6 @@ import { changePassword } from '../../actions/auth/changePassword';
 
 import { Formik, Form, Field } from 'formik';
 import { passwordSchema } from "../../schemas";
-import { LinearProgress } from '@mui/material';
 import { TextField } from 'formik-mui';
 import Alert from '@mui/material/Alert';
 
@@ -28,6 +27,7 @@ const SecuritySettings = () => {
       new_password1: '',
       new_password2: '',
       detail: '',
+      error: '',
     };
 
     const [alertData, setAlertData] = useState(initialState);
@@ -37,6 +37,7 @@ const SecuritySettings = () => {
         new_password1,
         new_password2,
         detail,
+        error,
     } = alertData;
 
     
@@ -152,6 +153,12 @@ const SecuritySettings = () => {
               detail && 
               <Alert severity="success" color="info">
                 {detail}
+              </Alert>
+            }
+            {
+              error && 
+              <Alert severity="error">
+                {error}
               </Alert>
             }
           </Form>

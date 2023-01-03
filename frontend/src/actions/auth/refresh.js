@@ -18,7 +18,7 @@ export const request_refresh = () => async dispatch => {
                 'Accept': 'application/json',
             }
         });
-        // console.log(res);
+        console.log(res);
         if (res.status === 200) {
             dispatch({
                 type: REFRESH_SUCCESS

@@ -1,11 +1,3 @@
-import {
-    REGISTER_SUCCESS,
-    REGISTER_FAIL,
-    SET_AUTH_LOADING,
-    REMOVE_AUTH_LOADING,
-} from './types';
-import { API_URL } from '../../config/index';
-
 
 
 export const changePassword = (
@@ -29,12 +21,6 @@ export const changePassword = (
         return res
 
     } catch(err) {
-        dispatch({
-            type: REGISTER_FAIL
-        });
+        return {error: 'somthing went wrong try again'};
     }
-
-    dispatch({
-        type: REMOVE_AUTH_LOADING
-    });
 };
